@@ -1,0 +1,73 @@
+%%% DS_Class4 - Simple probability of the Titanic Data set and Intro to the
+%%% Cyclist Data set
+%------------------------------------------------------------------------
+%      Gathering Simple Probability Information from the Titanic Data Set
+%------------------------------------------------------------------------
+
+% Using the Titanic dataset answer the following questions:
+%------------------------------------------------------------
+% Q1) find the probability of survival among all guests
+%--------------------------------------------------------
+% Q1-Solution: P(S=1) = #survived/#guests
+survData = TitanicDataSet(:,2);
+survDataNum = cell2mat(survData);
+noGuests = length(survDataNum);
+noSurv = sum(survDataNum);
+pSurv = noSurv/noGuests;
+%------------------------------------------------------------------------------------
+% Q2) Find the probability of survival P(A) of a guest given that the guest 
+    % is a young woman staying in first class - P(B)-> P(A|B)=P(AnB)/P(B)
+%------------------------------------------------------------------------------------
+% Q2-Solution: P(S=1|18<Age<35,Sex=female,Class=1) - conditional probabity
+% => P(S=1 AND (18<Age<35 AND Sex=female AND Class=1))/ P(18<Age<35 AND Sex=female AND Class=1)
+% items to find: 
+% a) P(B) = P(18<Age<35 AND Sex=female AND Class=1)
+% b) P(AnB) = P(S=1 AND 18<Age<35 AND Sex=female AND Class=1)
+% c) P(A|B) = P(S=1|18<Age<35,Sex=female,Class=1) = part-b/part-a
+%-----------------------------------------------------------------
+% 2-a) Prob that a guest is p(18<Age<35 AND Sex=female AND Class=1)
+%     => #young women in first class/#guests
+%2-a-i) vector for sex=female
+sexData = TitanicDataSet(:,5);
+sexFL = strcmp(sexData,'female');
+%2-a-ii) vector for class=1
+classData = TitanicDataSet(:,3);
+classDataNum = cell2mat(classData);
+class1L = classDataNum==1;
+%2-a-iii) vector for 18<Age<35
+ageData = TitanicDataSet(:,6);
+ageDataNum = cell2mat(ageData);
+ageDataLow = ageDataNum>=18;
+ageDataHigh = ageDataNum<=35;
+ageDataRange = ageDataLow.*ageDataHigh;
+%2-a-iv) vector for sex=female AND class=1 AND 18<Age<35
+YFC1 = sexFL.*class1L.*ageDataRange;
+%2-a-v) P(18<Age<35,Sex=female,Class=1)
+pYFC1 = sum(YFC1)/noGuests;
+%------------------------------------------
+%2-b-i) vector for survival and young female in first class
+SYFC1 = survDataNum.*YFC1;
+%2-b-ii)P(S=1 AND YFC1) = #(S=1&YFC1)/#guests
+pSYFC1 = sum(SYFC1)/noGuests;
+%------------------------------------------
+%2-c) P(S=1|18<Age<35,Sex=female,Class=1)
+%  =>P(S=1|YFC1) => pSYFC1/pYFC1
+pSgYFC1 = pSYFC1/pYFC1;
+% notes: Formula for the probability of A and B 
+%(independent events): p(A and B) = p(A) * p(B).
+% but as we do not know if survival was independent of
+% class, sex and age, so this approach was not adopted
+%-----------------------------------------------------
+% Q3) Use a bar graph to show the age distribution of females onboard the titanic
+% Q3-Solution:
+%gender data
+sexData = TitanicDataSet(:,5);
+sexFL = strcmp(sexData,'female');
+% age data
+ageData = TitanicDataSet(:,6);
+ageDataNum = cell2mat(ageData);
+ageDataF = ageDataNum(sexFL);
+[ageCountF,Edges] = histcounts(ageDataF,0:10:70);
+figure(6); bar(Edges(1,2:end),ageCountF);title('age distribution of females onboard the Titanic');xlabel('Age');ylabel('count');
+%--------------------------------------------------------------------------------------------------------------------------------
+%--

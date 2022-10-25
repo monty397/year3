@@ -1,0 +1,109 @@
+% working with two different data sets - to extract info. from the two, a
+% common field is used to link them both
+% Question - does precipitation above a threshold value of 0.1 inches cause a reduction 
+% in the average total amount of cyclist daily in May 2017
+%------------------------------------------
+%1) obtain plot of total cyclist per day for May 2017 with average cyclist
+%for the month & days in which high prec. occurred (i.e. above threshold value)
+%- obtain total cyclist per day for the month
+%- obtain the average cyclist for the month
+%- obtain days when precipitation occured above threshold value
+%------------------------------------------
+% obtain the data on May 2017
+dateC = EcoTotemBroadwayBicycleCount(:,1);
+% convert to numberic array to search through
+dateC = datevec(dateC);
+%%% obtain a logical vector for the year 2017
+c_2017 = (dateC(:,1)==2017);
+%%% obtain a logical vector for May
+c_Aug = (dateC(:,2)==5);
+%%% obtain a logical vector for August 2017
+cAug_2017 = c_2017.*c_Aug;
+cAug_2017 = cAug_2017>0;
+%%% pull out the dates(days) for August 2017
+daysData = dateC(:,3);
+daysAug2017 = daysData(cAug_2017);
+%%% obtain the total cyclist data for August 2017
+tC = EcoTotemBroadwayBicycleCount(:,5);
+% convert to numberic array to search through
+tC = cell2mat(tC);
+tC_Aug_2017 = tC(cAug_2017);
+% to get the total cyslist daily: first group cyslist data per day
+divPerDay = 96;% 24x4
+NoDays = round(length(tC_Aug_2017)/divPerDay);% 27 days
+cyclistT_Each_Day_Aug_2017 = zeros(NoDays,2);
+% do a for loop to sum the number of enteries on each respective Wed.
+for i=1:1:NoDays
+    start_P = i + (i - 1)*(divPerDay-1);% Arithmetic Progressioon
+    end_P = start_P + (divPerDay-1);
+    cyclistT_Each_Day_Aug_2017(i,1) = sum(tC_Aug_2017(start_P:end_P,1));
+    cyclistT_Each_Day_Aug_2017(i,2) = daysAug2017(start_P,1);
+end
+%%% now to obtain the average total cyclist per day in August 2017
+avgCylistT_Aug2017 = mean(cyclistT_Each_Day_Aug_2017(:,1));%1368
+noDays  = 31;
+avgC = zeros(1,noDays);
+avgC(:) = avgCylistT_Aug2017;
+figure(2);  plot(cyclistT_Each_Day_Aug_2017(:,2),cyclistT_Each_Day_Aug_2017(:,1)); hold on;
+plot(1:31, avgC); legend('total cyclist','average cyclist'); grid on;
+%%%% obtain precipitaion information for May 2017
+% 1-a) obtain the year 2017 data
+yearW = weatherData(:,1);
+yearW = cell2mat(yearW);
+w2017 = yearW==2017;
+% 1-b) obtain August month data
+monthW = weatherData(:,2);
+monthW = cell2mat(monthW);
+wAug = monthW==5;
+%%% 1-c) obtain a logical vector for the May 2017
+wAug_2017 = w2017.*wAug;
+wAug_2017 = wAug_2017>0;
+%%% 1-d) obtain the Precipation data for May 2017
+wPrec = weatherData(:,23);
+wPrec = cell2mat(wPrec);
+wPrecAug2017 = wPrec(wAug_2017);
+%%% 1-e) obtain days with high temp i.e. greater than threshold
+wPrecHval = 0.04;
+%%% logical vector for the days that the prec is above threshold
+wPrecAug2017H = wPrecAug2017>wPrecHval;
+sum(wPrecAug2017H)
+%%% now because it is not a one-to-one mapping between the two datasets,
+%%% we have to pull out the actual days information to map
+wDays = weatherData(:,3); % days
+wDays = cell2mat(wDays); % convert to numerical
+wDaysAug2017 = wDays(wAug_2017);% get all days in Aug 2017
+wDaysAug2017H = wDaysAug2017(wPrecAug2017H); %get days with prec. in Aug 2017
+%%%% now to get the total cyclst data on the days with prec
+noPrecDays = length(wDaysAug2017H);
+TcPrecDaysAug2017 = zeros(noPrecDays,2);
+for i=1:1:noPrecDays
+    %%% identify the days with high precipatation 
+    PrecDay = cyclistT_Each_Day_Aug_2017(:,2)==wDaysAug2017H(i,1);
+    %%% extract the total cyclist information
+    TcPrecDaysAug2017(i,2) = wDaysAug2017H(i,1); % store the day information
+    TcPrecDays = cyclistT_Each_Day_Aug_2017(PrecDay,1);
+    if(length(TcPrecDays)>0)
+       TcPrecDaysAug2017(i,1) = TcPrecDays(1);
+    end
+end
+%%% eliminate any missing information
+validInfo = TcPrecDaysAug2017(:,1)>0;
+TcPrecDaysAug2017 = TcPrecDaysAug2017(validInfo,:);
+%%%% now to plot all the info.
+figure(3);  plot(cyclistT_Each_Day_Aug_2017(:,2),cyclistT_Each_Day_Aug_2017(:,1)); hold on;
+plot(1:31, avgC);hold on; plot(TcPrecDaysAug2017(:,2),TcPrecDaysAug2017(:,1),'*'); legend('total cyclist','avg cyclist','prec days');
+%%% calculating the average total cyclist for the days with high prec. in Aug 2017
+cHotAug_2017_mean = mean(TcHotDaysAug2017);%1316
+% per diff = (100x1367-1316)/1367 = 3.7% diff (which is minor)
+
+
+
+
+
+
+
+
+
+
+
+

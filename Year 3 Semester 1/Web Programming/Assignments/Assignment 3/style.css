@@ -1,0 +1,316 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+hr {
+    border-top: 3px solid black;
+    width: 95%;
+    margin: 0 auto;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    /* float: left; */
+    width: 150px;
+    height: 150px;
+    /* margin-bottom: 40px; */
+}
+
+.container {
+    margin: auto;
+    width: 80%;
+    border-radius: 5px;
+    border-color: black;
+    border-style: solid;
+    margin-bottom: 30px;
+}
+
+h1 {
+    text-align: center;
+}
+
+pre {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+li {
+    margin-left: 20px;
+    list-style: none;
+}
+
+textarea {
+    border-color: rgb(55, 137, 225)
+}
+
+label {
+    position: auto;
+    margin-left: 30px;
+    margin-right: 200px;
+}
+
+input[type="text"] {
+    margin-left: 30px;
+    margin-right: 97px;
+    margin-bottom: 20px;
+    border-color: rgb(55, 137, 225);
+}
+
+input[type="checkbox"] {
+    padding: 3px;
+    margin-left: 50px;
+    transform: scale(1.5);
+    margin-bottom: 12px;
+    border-color: rgb(55, 137, 225);
+}
+
+input[type="email"] {
+    border-color: rgb(55, 137, 225);
+}
+
+button {
+    background-color: #4CAF50;
+    margin-left: 45%;
+    display: block;
+    margin-bottom: 20px;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+input[type="date"] {
+    border-color: rgb(55, 137, 225);
+}
+
+
+/* ---------------IDS-----------------*/
+
+
+/* page 1 */
+
+#gen {
+    margin-left: 230px;
+}
+
+#oth {
+    margin-left: 100px;
+}
+
+#other2 {
+    margin-left: 225px;
+}
+
+#other {
+    margin-left: 100px;
+}
+
+#d {
+    margin-left: 15px;
+}
+
+#g {
+    margin-left: -11px;
+}
+
+#date {
+    margin-left: 155px;
+}
+
+#age {
+    margin-left: -12px;
+}
+
+#nat {
+    margin-left: 140px;
+}
+
+#nationality {
+    margin-left: 100px;
+}
+
+#contact {
+    margin-left: 48px;
+}
+
+#kin {
+    margin-left: 15px;
+}
+
+#nkin {
+    margin-left: 100px;
+}
+
+#address {
+    margin-left: 30px;
+    height: 50px;
+}
+
+#work {
+    margin-left: 63px;
+}
+
+#ckin {
+    margin-left: 78px;
+}
+
+#nkinc {
+    margin-left: 100px;
+}
+
+#email {
+    margin-left: 30px;
+    width: 220px;
+}
+
+#wo {
+    margin-left: 78px;
+}
+
+#yes {
+    margin: auto;
+    text-align: center;
+    transform: scale(1);
+}
+
+#no {
+    margin: auto;
+    text-align: center;
+    transform: scale(1);
+    margin-left: 4px;
+}
+
+#third {
+    width: 140px
+}
+
+#p3 {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#tabletext {
+    width: 93%;
+    margin-top: 20px;
+    margin-left: 3px;
+}
+
+#atarea {
+    resize: none;
+    height: 50px;
+    margin-left: 30px;
+}
+
+#cont {
+    margin-left: 135px;
+}
+
+
+/* page 1 end */
+
+
+/* page 2 */
+
+#vaxdate {
+    margin-left: 30px;
+    margin-bottom: 20px;
+}
+
+#bat {
+    margin-left: 80px;
+}
+
+#exp {
+    margin-left: 65px;
+}
+
+#batc {
+    margin-left: 210px;
+}
+
+#desc {
+    margin-left: 45px;
+}
+
+#bgl {
+    margin-left: 39px;
+}
+
+#glu {
+    margin-left: 65px;
+}
+
+#adv {
+    margin-left: 60px;
+}
+
+#in {
+    margin-left: -190px;
+}
+
+#adve {
+    margin-left: 10px;
+}
+
+#tarea {
+    resize: none;
+    height: 50px;
+    margin-left: 215px;
+}
+
+#ici {
+    margin-left: -150px;
+}
+
+#nad {
+    margin-left: -140px;
+}
+
+#nav {
+    margin-left: -170px;
+}
+
+#sav {
+    margin-left: -140px;
+}
+
+
+/* page 2 */
+
+
+/* ---------- Table ---------- */
+
+table {
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+th {
+    background-color: grey
+}
+
+#one {
+    text-align: center;
+    vertical-align: middle;
+}
+
+
+/* td {
+    text-align: center;
+} */
+
+table,
+th,
+td {
+    border: 1px black solid;
+    border-collapse: collapse;
+}

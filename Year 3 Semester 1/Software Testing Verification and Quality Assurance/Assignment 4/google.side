@@ -1,0 +1,69 @@
+{
+  "id": "f5317d64-5d5d-42e7-9c1d-ed613609be70",
+  "version": "2.0",
+  "name": "google",
+  "url": "",
+  "tests": [{
+    "id": "505c3be4-643b-45d7-9ef0-b1b651e06d12",
+    "name": "Untitled",
+    "commands": [{
+      "id": "c3dde6e8-ad60-4bba-85b9-4ad5d55a616d",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.yahoo.com",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5c08fef3-83b6-4de7-aa77-9f6564cd3cf8",
+      "comment": "",
+      "command": "clickAt",
+      "target": "id=ybar-sbq",
+      "targets": [
+        ["id=ybar-sbq", "id"],
+        ["name=p", "name"],
+        ["css=#ybar-sbq", "css:finder"],
+        ["xpath=//input[@id='ybar-sbq']", "xpath:attributes"],
+        ["xpath=//form[@id='ybar-sf']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "678f6878-3286-4c31-ae54-07ca860b6ebc",
+      "comment": "",
+      "command": "type",
+      "target": "id=ybar-sbq",
+      "targets": [
+        ["id=ybar-sbq", "id"],
+        ["name=p", "name"],
+        ["css=#ybar-sbq", "css:finder"],
+        ["xpath=//input[@id='ybar-sbq']", "xpath:attributes"],
+        ["xpath=//form[@id='ybar-sf']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "How to make cheese?"
+    }, {
+      "id": "6ed8574b-eecb-4cbd-b604-a52367c06c53",
+      "comment": "",
+      "command": "clickAt",
+      "target": "id=ybar-search",
+      "targets": [
+        ["id=ybar-search", "id"],
+        ["css=#ybar-search", "css:finder"],
+        ["xpath=//input[@id='ybar-search']", "xpath:attributes"],
+        ["xpath=//form[@id='ybar-sf']/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "738b39b6-7bd5-4f16-8806-7e92237d7851",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["505c3be4-643b-45d7-9ef0-b1b651e06d12"]
+  }],
+  "urls": [],
+  "plugins": []
+}

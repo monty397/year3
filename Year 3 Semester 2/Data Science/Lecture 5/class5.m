@@ -1,0 +1,48 @@
+%--------------------------------------------------------------------------------------------------------------------------------
+% class-5 will examine gathering information on specific days on the Cyclist data set
+% website: https://data.cambridgema.gov/Transportation-Planning/Eco-Totem-Broadway-Bicycle-Count/q8v9-mcfg
+%--------------------------------------------------------------------------------------------------------------------------------
+%%% Class-5: in this class the cyclist dataset will be examined
+% https://data.cambridgema.gov/Transportation-Planning/Eco-Totem-Broadway-Bicycle-Count/q8v9-mcfg
+% Question-1: plot a graph of the total cyclist on July 4th 2018 vs time(in hours)
+%%% i)narrow dataset to the particular date, ii) gather total cyclist info
+%%% on that date, iii) gather total cyclist info per hour on that date
+%%% step-1
+% 1-a) obtain the data on July 4th 2018
+date = EcoTotemBroadwayBicycleCount(:,1);
+% convert to numberic array to search through
+dateNum = datevec(date);
+
+% zoom in on the particular date of July 4th 2018
+date_2018 = (dateNum(:,1)==2018); % year 2018
+date_July = (dateNum(:,2)==7); % month July = 7th 
+date_4 = (dateNum(:,3)==4); % day of the month = 4th
+%%% obtain intersection of all three logical vectors from above
+date_July_4_2018 = date_2018.*date_July.*date_4;
+date_July_4_2018 = date_July_4_2018>0; % making it a logical vector
+%%%%%-------------------------------------------------------------
+%%%% part-ii) gather total cyclist info on that date
+%%%--------------------------------------------------------
+%%% 1-b) obtain the total cyclist data 
+cyclistT = EcoTotemBroadwayBicycleCount(:,5);
+% convert to a number to easily search through
+cyclistTnum = cell2mat(cyclistT); 
+    %%% obtaining the total cyclist vector on July 4th 2018
+    %%% method-place logical vector into data vector to extract info on
+    %%% cyclist
+cyclistVec_July_4_2018 = cyclistTnum(date_July_4_2018);
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% part-iii) gather total cyclist info per hour on that date
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% 1-c) obtain the time data which is given in 15min intervals
+%%% hence it has to be summed up every 4 intervals for each hour
+cyclist_T_H = zeros(24,1); % create an empty shell to store data for each hour
+for i=1:1:24 % i = 2
+    start_P = i + (i - 1)*3; % arithmetic Progression for start pt. of a particular hour
+    end_P = start_P + 3;
+    cyclist_T_H(i,1) = sum(cyclistVec_July_4_2018(start_P:end_P,1));
+end
+%%% now to visualize the data
+hour = (0:23)';
+figure(7); bar(hour,cyclist_T_H);title('Total cyclist per Hour on July 4th 2018');xlabel('hour');ylabel('Total Cyclist'); grid on;

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Covid Vaccine Form</title>
+    <meta name="viewport" content="width=device-width, initial-1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <img src="health.jpg">
+        <h1>Covid-19 Vaccination Pre-Registration Form</h1>
+        <ul>
+            <li><b>1. BIODATA</b> <i>(To be completed by Applicant in all capital letters)</i></li><br>
+        </ul>
+
+        <form>
+            <label>Vaccination Site</label><br>
+            <input type="text" name="Vaccination Site" id="Vaccination" required><br>
+            <label>Last Name</label> <label>First Name</label> <label id="oth">Other</label><br>
+            <input type="text" name="last name" id="last name" required>
+            <input type="text" name="first name" id="first name" required>
+            <input type="text" name="other" id="other" required> <br>
+            <label>Identification</label> <label id="d"> Date of Birth (dd/mm/yyyy)</label> <label id="g">Gender</label><br>
+            <input type="checkbox" name=" identification" id="identification"> ID
+            <input type="checkbox" name=" identification" id="dp"> DP
+            <input type="date" name="date" id="date" required>
+            <input type="text" name="gender" id="other2" required> <br>
+            <input type="checkbox" name=" identification" id="check"> BP
+            <input type="checkbox" name=" identification" id=""> PP <br>
+            <label>Identification No.</label> <label id="age">Age</label> <label id="nat">Nationality</label><br>
+            <input type="text" name="id no" required>
+            <input type="text" name="age " required>
+            <input type="text" name="nationality" id="nationality" required><br>
+            <label>Address</label> <label id="contact">Contact No. (xxx-xxxx)</label> <label id="kin">Name of Next of Kin</label><br>
+            <textarea id="atarea" required></textarea>
+            <input type="text" name="contact" id="cont" required>
+            <input type="text" name="kin" id="nkin" required>
+            <label>Email</label> <label id="work">Place of Work</label> <label id="ckin">Next of Kin Contact No.</label><br>
+            <input type="email" id="email" name="email" required>
+            <input type="text" name="work" id="wo" required>
+            <input type="text" name="kin" id="nkinc" required>
+
+
+            <!-- <ul>
+                <li><b>STOP HERE! DO NOT COMPLETE THE REST OF THE FORM</b></li><br>
+            </ul>
+            <hr>
+            <ul>
+                <li><b>FOR OFFICIAL USE ONLY</b></li><br>
+            </ul>
+            <ul>
+                <li><b>2. PRE-VACCINATION SCREENING</b></li><br>
+            </ul>
+
+            <table>
+                <tr>
+                    <th></th>
+                    <th>Yes</th>
+                    <th>No</th>
+                    <th id="third">Details</th>
+                </tr>
+                <tr>
+                    <td>1. Are you well today?</td>
+                    <td id="one"><input type="checkbox" id="yes" name="yes"></td>
+                    <td id="two"><input type="checkbox" id="no" name="no"></td>
+                    <td><input type="text" id="tabletext"></td>
+                </tr>
+                <tr>
+                    <td>2. Do you have any flu-like symptoms? e.g. Runny nose, fever</td>
+                    <td id="one"><input type="checkbox" id="yes" name="yes"></td>
+                    <td id="two"><input type="checkbox" id="no" name="no"></td>
+                    <td><input type="text" id="tabletext"></td>
+                </tr>
+                <tr>
+                    <td>3. Do you have any medical conditions that we should be aware of? e.g. Diabetes Mellitus, Hypertension (If yes, state in details)</td>
+                    <td id="one"><input type="checkbox" id="yes" name="yes"></td>
+                    <td id="two"><input type="checkbox" id="no" name="no"></td>
+                    <td><input type="text" id="tabletext"></td>
+                </tr>
+                <tr>
+                    <td>4. Have you received any other vaccination in the last month? (If yes, state in details)</td>
+                    <td id="one"><input type="checkbox" id="yes" name="yes"></td>
+                    <td id="two"><input type="checkbox" id="no" name="no"></td>
+                    <td><input type="text" id="tabletext"></td>
+                </tr>
+            </table> -->
+            <button>Submit</button></a>
+            <ul>
+                <li>
+                    <b>3. VACCINATION INFORMATION</b>
+                </li>
+            </ul>
+
+            <form>
+                <label>Date of vaccination (dd/mm/yyyy)</label><br>
+                <input type="date" id="vaxdate" required><br>
+                <label>Name of Vaccine</label><label>Expiry Date</label><label id="bat">Batch No.</label><br>
+                <input type="text" id="nvax" required>
+                <input type="date" id="exp" required>
+                <input type="text" id="batc" required><br>
+                <label>Blood Pressure</label> <label id="bgl">Blood Glucose Level</label><br>
+                <input type="text" required>
+                <input type="text" id="glu" required><br>
+                <label>Observation</label><label id="adv">Adverse Reaction</label><label id="desc">Desciption Event</label><br>
+                <label>Time in:</label><input type="text" id="in" required>
+                <input type="checkbox" id="adve"> Yes
+                <input type="checkbox"> No
+                <textarea id="tarea"></textarea><br>
+                <label>Time out:</label><input type="text" id="in" required><br>
+                <label>Immuniza tion Card Issue</label><input type="text" id="ici" required><br>
+                <label>Next Appointment Date</label><input type="date" id="nad" required><br><br>
+                <label>Name of Vaccinator (CAPS)</label><input type="text" id="nav" required><br>
+                <label>Signature of Vaccinator</label><input type="text" id="sav" required><br>
+                <button type="submit">Submit</button>
+                <p id="p3">This Form is part of the Patient’s Medical Records and is the Property of the Ministry of Health (MOH),<br> Government of the Republic of Trinidad and Tobago (GORTT).</p>
+            </form>
+        </form>
+    </div>
+    <a href="Page2.html"><button>Next Page</button></a>
+</body>
+
+</html>

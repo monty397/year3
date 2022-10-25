@@ -1,0 +1,212 @@
+Marking Scheme & Guidelines for 2nd Phase of Final Year Project
+ (1st draft - Feb 2022)
+
+Title Page 
+
+Declaration Page 
+       - states that no copying took place
+
+Abstract - 1 mark
+
+List of Acronyms
+
+Table of Contents - 1 mark
+
+Introduction - 3 marks - ch1 (same as in 1st phase)
+	- Describe the problem in detail (include pictures) - 1
+        - Describe how the problem is going to be solved in detail - state any unique contributions - 1
+        - thesis outline - Give a brief overview on the organisation of the rest of the thesis - 1
+
+Background & Literature Review- 6 marks  -ch2 (same as in 1st phase)
+        - chapter intro - 1
+             - give a summary of the problem
+             - outline the main items (sub-sections) that would be discussed in the rest of the chapter
+                  - background information about the problem 
+                  - comparison with existing systems
+                  - choice of approach
+                  - summary
+        - 2.1 - background information about the problem (use pictures where necessary) - 1
+        - 2.2 - comparison (pros & cons) with existing systems - (at least 3 comparisons, average 1 marks each)
+              - group similar existing works if possible and do the comparison
+              - state the methods the existing systems use
+              - give pictures of existing systems
+	      - discuss pros and cons of the system
+	      - comment on the respective system approach with your (the proposed) approach.
+		  e.g. 1 - the proposed approach improves on this method with the addition of a map feature to assist with navigation
+		  e.g. 2 - as this is the state of the art method in the literature, the proposed approach will be similar, the 
+                           only difference being that it would be more economical. 
+	      - each different comparison should be in a different sub-section
+        - 2.3 - choice of approach - 1
+              - give reasons for your choice of approach to solve the problem (do not go into fine details stick to major components 
+                  e.g. database to store the data & website to enter/interact with the data) 
+        - 2.4 summary - state what was discussed in this chapter and state what would be done in the next chapter - 1
+
+Methodology - 6 marks - ch3 (same as in 1st phase)
+        - chapter intro 
+                  - describe the general approach to solve the problem that involves the major components as outlined in the previous chapter
+			e.g. website, database, map, forms
+                  - diagram of project's major components and show how they are linked
+                  - outline the main items (sub-sections) that would be discussed in the rest of the chapter
+                     - project's major components e.g. database, forms, webpages
+		     - software method utilized e.g. waterfall (software methods could be applied to hardware only projects)
+                     - summary
+         - 3.1 project's major components - 5 
+                     - Requirements analysis - give reasons for the choice of sub-components used in the specific major component 
+                     	Note: if you did any survey to obtain information, you can discuss the results here, and post the survey 
+                              in the appendix
+                     - diagram of subcomponents of the specific major component and how they are linked
+                     - describe how each subcomponent functions in the specific major component
+		     - each different major component should be in a different sub-section (e.g. forms, database, webpage, maps)
+         - 3.2 software method utilized - 1
+                     - diagram of software method's major stages and interconnections
+		     - describe how the software method works
+                     - give reason(s) for the choice of software method
+		     - show (with examples) how this particular software method would be utilized in your project
+         - 3.3 summary - state what was discussed in this chapter and state what would be done in the next chapter 
+
+
+Implementation, Testing and Analysis - 54 marks - ch4
+
+- chapter intro - 2 marks
+     - state that this chapter will describe how each of the major components as outlined in the methodology chapter
+       (database, forms, website, maps) would be implemented, tested and analyzed. The testing and analysis aspects 
+       would be accomplished in three categories: i) component testing, ii) system testing, and iii) user testing.
+     - outline the main items (sub-sections) that would be discussed in the rest of the chapter:
+         - Implememtation and testing of each major component
+	 - System testing
+         - User testing
+	 - summary
+
+- 4.1 - Implementaion and Component testing - 20 marks
+        In this section details of the implementation and testing of the major components: forms, database, map and
+        website, would be given
+      - 4.1.1 Forms
+ 	- discuss how the functionality of this component (as indicated in its flow chart) was implemented in terms of:  
+          coding language, platform, and any third party software package(s) utilized - use diagrams where needed. 
+        - Create test(s) to test each functionality aspect of the respective component. Describe each specific test(s) 
+          used in terms of: what is being tested, the input and the expected output. Present the actual results in a 
+          simple to read manner e.g. a tabular format with columns of: i) description of test, ii) element,X, being tested,
+          iii) expected result, iv) actual result, v) discussion on what the actual results mean e.g. the results obtained
+          was similar to that expected, this means that the X component is functioning as expected.
+	- 4.1.1.2 - repeat this procedure for each major subcomponent of this respective component
+      - 4.1.2 Database - repeat the same procedure as stated in 4.1.1
+      - 4.1.3 Map - repeat the same procedure as stated in 4.1.1
+      - 4.1.4 Website - repeat the same procedure as stated in 4.1.1
+
+- 4.2 - System testing - 20 marks
+        In this section, details will be given on how each combination of multiple components (major) of the system would 
+        be tested simaltaneously.
+      - 4.2.1 Testing Forms and Database - perform 
+        - Create test(s) to test each functionality aspect of the respective components that work together. Describe each 
+          specific test(s) used in terms of: what is being tested, the input and the expected output. Present the actual 
+          results in a simple to read manner e.g. a tabular format with columns of: i) description of test, ii) element,X, 
+          being tested, iii) expected result, iv) actual result, v) discussion on what the actual results mean e.g. the 
+          results obtained was similar to that expected, this means that the X component is functioning as expected. 
+      - 4.2.2 Testing Maps and Database - repeat the procedure descriped in 4.2.1 above 
+      - 4.2.3 Website and Database - repeat the procedure descriped in 4.2.1 above  
+      - 4.2.4 Total System Testing: forms, Database, and website - repeat the procedure descriped in 4.2.1 above 
+
+- 4.3 - User Testing - 10 marks
+        In this section, details will be given on how multiple users tested the different aspects of the system.
+        - state the quantity of users and their technical expertise. Try to obtain a min. of 3 users. It is sometimes good to 
+          use a mixture of tecnical and non-technical persons, so you can guage how user friendly the application/system is.
+	- for each main functionality/component of the system give each user the same set of tasks to perform on the system, 
+          and time how long it takes them to accomplish each task.	
+        - state what (component/functionality) each task is testing in the system (website navigation, user friendly)
+	- show results in a simple to read manner e.g. tabular format with columns of: i) description of test, ii) element,X, 
+          being tested, iii) expected result, iv) actual result, v) discussion on what the actual results mean e.g. the 
+          results obtained showed all users were able to find the form from the website's home page with
+          an average time frame of 30 seconds. This short time frame indicates that the website is user friendly and easy to 
+          navigate as this test was performed by both technical and non-technical users
+
+- 4.4 summary - state what was discussed in this chapter and state what would be done in the next chapter - 2
+
+
+Report Summary & Conclusions - 20 marks - ch5
+
+- chapter intro - 2
+     - state the system that was presented in this report (e.g. this report presented an ICT system for selling
+       cars that comprised of four main components: forms, database, map, website)
+     - state that this chapter will provide a summary of the findings of this report in terms of Design, 
+       Implementation, Testing, Conclusions and Future Work
+     - outline the main items (sub-sections) that would be discussed in the rest of the chapter  
+       e.g. The findings obtained from the design and testing of the individual components will be discussed  
+       first, followed by the testing of the entire system, user testing, and lastly, some final thoughts on 
+       the project will be given
+
+- 5.1 Summary of the Design, Implementation and Testing of the Individual Components - 8 marks
+
+     5.1.1 Component-1(form)
+       - state what is the purpose of this component is in the system. e.g. The purpose of the form in this system
+         was to gather information about the particular vehicle
+       - summarize its design approach and indicate where the details of its design can be located in the report
+         e.g. it utilized a data entry approach with error checking, the details of which are given in pages 45-57 in ch 4.
+       - summarize its implementation procedure and indicate where the details can be located in the report
+	 e.g. This design approach was implemented using html for its layout and java script for error checking, further details
+         can be found on pages 58-60 in ch4.      
+       - summarize the testing procedure utilized and the results obtained, and where it can be found in the report
+         e.g. to test the form component, various forms of data was inputed into the respective fields, and it showed that only
+         the specified types of data in the design were saved, thus proving that it was working as designed (pictures of results 
+         can be shown for reference). Full details of these tests and their corresponding results are given in pages 57-61 in ch 4.
+       - State what the resuts of these test mean. These results mean that this component is working as designed (within the 
+         boundaries of the tests perfomred) 
+       - state any problems encountered. e.g. some issues were encountered with the initial firefox platform, but this was solved
+         by using the xamp platform.
+       - state anything that can be done in the future to improve this component e.g. error checking on the dates entered
+
+     5.1.2 Component-2(database)
+      - Repeat section 5.1.1 (Component-1) for each major component of the system
+
+- 5.2 Summary of the Design, Implementation and Testing of the Entire System - 5 marks
+	- state how the functionality of the system was achieved from testing multiple individual components and indicate where these 
+	  details can be found in the report e.g. the functionality for the overall ICT system for selling cars was achieved  
+          by linking the individual components in a sequential manner of form-database-website-map, the full details are shown 
+          in pages 67-70 in ch3.
+	- summarize the testing procedure utilized and the results obtained, and where it can be found in the report
+          e.g. two types of tests were utilized for testing the system, one involving different input data, and the other different users.
+          For the tests involving different input data, multiple components were tested together such as the: i) form and the database, 
+          ii) the database & website, and iii) the form, the database the website and the map. One of the test that was done with all
+          of the components involved inputing data into the forms, which went to the database and then showed up on the map on the website.
+          map & website) with various input data and users (pictures of results can be shown for reference). Full details of these tests can 
+          be found on page 58-67 in ch4. The other type of tests involved giving multiple users the same tasks to perform and timing them. 
+          The results of these tests showed that the all the users performed the specified tasks within a short time frame (pictures of 
+          results can be shown for reference)
+        - State what the resuts of these test mean. The results obtained from the input data tests mean that entire system is working as 
+          designed (within the boundaries of the tests perfomred). Whereas the user tests, the short time frame obtained indicates that 
+          the system is fairly easy to navigate and use 
+        - state any problems encountered. e.g. some issues were encountered with the local server, but this was solved.
+        - state anything that can be done in the future to improve this component e.g. perform testing on a live server
+
+- 5.2 Summary of the User testing - 4 marks
+        - state how different functionality aspects of the system was tested by various users and indicate where these results can be
+          found in the report.
+        - summarize the testing procedure utilized and the results obtained, and where it can be found in the report
+        - State what the resuts of these test mean. 
+        - state any problems encountered. e.g. some issues were encountered with the local server, but this was solved.
+        - state anything that can be done in the future to improve this component e.g. perform testing on a live server
+  
+
+- 5.3 Final Thoughts - 1 mark
+        - state what was discussed in this chapter
+        - state if the initial goals of the project have been achieved. e.g. these results show that it is possible to 
+          create an economic online solution to sell cars using the coding languages of html, javascript, php, and sql. The
+          users that tested the system all agreed that the system was easy to use and that they would use it to purchase cars. 
+
+
+
+
+Appendix - 1 mark
+     - contains Project Proposal Form (signed by supervisor) 
+       and any additional material needed in the project
+
+Bibliography - 3 marks (at least 6 references were made, and 
+formatted in IEEE format)
+
+General Layout of Report: 6 marks
+	- spelling, punction, sentence structure, text size, sections 
+in the right order, all figures properly labelled
+
+
+AA00ALF4ZT
+
+Application ID AA00ALFI0X

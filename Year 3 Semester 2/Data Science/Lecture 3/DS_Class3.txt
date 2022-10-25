@@ -1,0 +1,84 @@
+%%% class 3 %%%% - clean up your data - fill in missing values
+%---------------------------------------------------------
+%%% Q-1:Replace missing age enteries with the median age
+%---------------------------------------------------------
+% select age - 6th column from loaded data, train
+ageData = TitanicDataSet(:,6);
+%%%%% convert to type double to work with numbers
+ageDataNum = cell2mat(ageData);
+%%%%% look for values that contain NaN i.e. missing values
+ageMissL = isnan(ageDataNum);
+%%% find the number of persons with age missing
+NoMissAge = sum(ageMissL);
+%%%% find percentage of missing data - 20%
+ageMissP = 100*sum(ageMissL)/length(ageData);
+%%%% find the median age of existing valid age entries - 28
+ageExist = ageDataNum(~ageMissL);
+ageMedian = median(ageExist);
+%%% replace missing age data with median age
+% make a copy
+ageFull = ageDataNum;
+% replace NaN (missing data) with zeros
+ageFull(isnan(ageFull)) = 0;
+% replace zeros (missing data) with median age
+MedianVector = ageMedian*ageMissL;
+ageFull = ageFull + MedianVector;
+%%% plot histogram to visualize the data
+figure(2); subplot(2,2,1);hist(ageFull);grid on;title('Titanic Age Distribution Modified');xlabel('age');ylabel('# of persons');
+figure(2); subplot(2,2,2);hist(ageDataNum);grid on;title('Initial Titanic Age Distribution');xlabel('age');ylabel('# of persons');
+%%%-----------------------------------------
+% Q #2: Fill in missing fares with median value of corresponding class
+%%%-----------------------------------------
+%Steps: i) get missing fares (mF), ii) get corresponding classes for mF,
+% iii) get median value for each class,medFC iv) replace mF with medFC 
+%-----------------------------------------------------
+% i)
+% select fares - 10th column from loaded data, train
+fareData = TitanicDataSet(:,10);
+%%%%% convert to type double to work with numbers
+fareDataNum = cell2mat(fareData);
+%%%%% look for missing values ie.  contain 0
+fareMissL = fareDataNum==0;
+%%%% find percentage of missing data - 1.68%
+MissFareQ = sum(fareMissL);
+fareMissP = 100*sum(fareMissL)/length(fareData);
+%------------------------------------------------
+% get corresponding classes for mF,
+%%% investigate if there is information on the class of the person
+classData = TitanicDataSet(:,3);
+%%%%% convert to type double to work with numbers
+classDataNum = cell2mat(classData);
+%%%% find the corresponding class values for fares that are missing
+fareMissClass = classDataNum(fareMissL);
+%-------------------------------------------------
+% iii) get median value for each class,medFC
+%-----------------------------------------------
+%%%% find the median fare for each class (1-3)
+class1L = classDataNum==1;
+class1Fare = fareDataNum(class1L);
+class1FareMed = median(class1Fare);
+figure(2); subplot(2,2,3);hist(class1Fare);grid on;title('Titanic class1Fare');xlabel('fare');ylabel('# of persons');
+%%% can combine three steps into one now
+class2FareMed = median(fareDataNum(classDataNum==2));
+class3FareMed = median(fareDataNum(classDataNum==3));
+%---------------------------------------------------
+%iv) replace mF with medFC
+%--------------------------------------------------
+%%% fill in missing fares with median of corresponding class
+% using logical method
+fareFull = fareDataNum; % create a copy of original data
+fareFull = fareFull + fareMissL.*(classDataNum==1)*class1FareMed + fareMissL.*(classDataNum==2)*class2FareMed + fareMissL.*(classDataNum==3)*class3FareMed;
+%test = sum(fareFull==0);to see if any values are still missing
+%%% performing the same thing with a for loop
+classFareMedVec = [class1FareMed;class2FareMed;class3FareMed];
+fareFullFor = fareDataNum;% create a copy of original
+for i=1:1:length(fareDataNum)
+    fareValue = fareDataNum(i); %get the fare value
+    if(fareValue==0) % check to see if missing i.e. the value is 0
+       classValue = classDataNum(i); % get the class value
+       % replace missing value with median of corresponding class
+       fareFullFor(i) = classFareMedVec(classValue); 
+    end
+end
+%%% much shorter with for loop, but for large datasets, it would take much
+%%% longer than using the logical approach

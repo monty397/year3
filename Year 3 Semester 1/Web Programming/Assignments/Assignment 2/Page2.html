@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Covid Vaccine Form</title>
+    <meta name="viewport" content="width=device-width, initial-1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Confidential</h1>
+
+        <table>
+            <tr>
+                <th></th>
+                <th>Yes</th>
+                <th>No</th>
+                <th id="third">Details</th>
+            </tr>
+            <tr>
+                <td>1. Are you well today?</td>
+                <td id="one"><input type="checkbox" id="yes" name="yes"></td>
+                <td id="two"><input type="checkbox" id="no" name="no"></td>
+                <td><input type="text" id="tabletext"></td>
+            </tr>
+            <tr>
+                <td>2. Do you have any flu-like symptoms? e.g. Runny nose, fever</td>
+                <td id="one"><input type="checkbox" id="yes" name="yes"></td>
+                <td id="two"><input type="checkbox" id="no" name="no"></td>
+                <td><input type="text" id="tabletext"></td>
+            </tr>
+            <tr>
+                <td>3. Do you have any medical conditions that we should be aware of? e.g. Diabetes Mellitus, Hypertension (If yes, state in details)</td>
+                <td id="one"><input type="checkbox" id="yes" name="yes"></td>
+                <td id="two"><input type="checkbox" id="no" name="no"></td>
+                <td><input type="text" id="tabletext"></td>
+            </tr>
+            <tr>
+                <td>4. Have you received any other vaccination in the last month? (If yes, state in details)</td>
+                <td id="one"><input type="checkbox" id="yes" name="yes"></td>
+                <td id="two"><input type="checkbox" id="no" name="no"></td>
+                <td><input type="text" id="tabletext"></td>
+            </tr>
+            <tr>
+                <td>5. Do you have allergies? e.g. Seafood, eggs, antibiotics (If yes, state in details)</td>
+                <td id="one"><input type="checkbox" id="yes" name="yes"></td>
+                <td id="two"><input type="checkbox" id="no" name="no"></td>
+                <td><input type="text" id="tabletext"></td>
+            </tr>
+            <tr>
+                <td>6. Have you ever had a confirmed allergic reaction to the first dose of the COVID-19 vaccine? </td>
+                <td id="one"><input type="checkbox" id="yes" name="yes"></td>
+                <td id="two"><input type="checkbox" id="no" name="no"></td>
+                <td><input type="text" id="tabletext"></td>
+            </tr>
+            <tr>
+                <td>7. Are you currently pregnant?</td>
+                <td id="one"><input type="checkbox" id="yes" name="yes"></td>
+                <td id="two"><input type="checkbox" id="no" name="no"></td>
+                <td><input type="text" id="tabletext"></td>
+            </tr>
+            <tr>
+                <td>8. Are you currently breastfeeding?</td>
+                <td id="one"><input type="checkbox" id="yes" name="yes"></td>
+                <td id="two"><input type="checkbox" id="no" name="no"></td>
+                <td><input type="text" id="tabletext"></td>
+            </tr>
+            <tr>
+                <td>9. Have you tested positive for coronavirus infection within the last 3 months?</td>
+                <td id="one"><input type="checkbox" id="yes" name="yes"></td>
+                <td id="two"><input type="checkbox" id="no" name="no"></td>
+                <td><input type="text" id="tabletext"></td>
+            </tr>
+            <tr>
+                <td>10. Do you have a bleeding disorder, or are you currently taking or have recently stopped taking Warfarin?
+                </td>
+                <td id="one"><input type="checkbox" id="yes" name="yes"></td>
+                <td id="two"><input type="checkbox" id="no" name="no"></td>
+                <td><input type="text" id="tabletext"></td>
+            </tr>
+            <tr>
+                <td>11. Do you have any questions about your vaccination today?
+                </td>
+                <td id="one"><input type="checkbox" id="yes" name="yes"></td>
+                <td id="two"><input type="checkbox" id="no" name="no"></td>
+                <td><input type="text" id="tabletext"></td>
+            </tr>
+            <tr>
+                <td>12. Do you consent to receiving the COVID-19 vaccine?
+                </td>
+                <td id="one"><input type="checkbox" id="yes" name="yes"></td>
+                <td id="two"><input type="checkbox" id="no" name="no"></td>
+                <td><input type="text" id="tabletext"></td>
+            </tr>
+            <tr>
+                <td>13. Is this your second dose of COVID-19 Vaccine?
+                </td>
+                <td id="one"><input type="checkbox" id="yes" name="yes"></td>
+                <td id="two"><input type="checkbox" id="no" name="no"></td>
+                <td><input type="text" id="tabletext"></td>
+            </tr>
+            <tr>
+                <td>14. Did you contract the COVID-19 Virus after your first shot? If yes what date?
+                </td>
+                <td id="one"><input type="checkbox" id="yes" name="yes"></td>
+                <td id="two"><input type="checkbox" id="no" name="no"></td>
+                <td><input type="text" id="tabletext"></td>
+            </tr>
+        </table>
+
+        <ul>
+            <li>
+                <b>3. VACCINATION INFORMATION</b>
+            </li>
+        </ul>
+
+        <form>
+            <label>Date of vaccination (dd/mm/yyyy)</label><br>
+            <input type="date" id="vaxdate" required><br>
+            <label>Name of Vaccine</label><label>Expiry Date</label><label id="bat">Batch No.</label><br>
+            <input type="text" id="nvax" required>
+            <input type="date" id="exp" required>
+            <input type="text" id="batc" required><br>
+            <label>Blood Pressure</label> <label id="bgl">Blood Glucose Level</label><br>
+            <input type="text" required>
+            <input type="text" id="glu" required><br>
+            <label>Observation</label><label id="adv">Adverse Reaction</label><label id="desc">Desciption Event</label><br>
+            <label>Time in:</label><input type="text" id="in" required>
+            <input type="checkbox" id="adve"> Yes
+            <input type="checkbox"> No
+            <textarea id="tarea"></textarea><br>
+            <label>Time out:</label><input type="text" id="in" required><br>
+            <label>Immunization Card Issue</label><input type="text" id="ici" required><br>
+            <label>Next Appointment Date</label><input type="date" id="nad" required><br><br>
+            <label>Name of Vaccinator (CAPS)</label><input type="text" id="nav" required><br>
+            <label>Signature of Vaccinator</label><input type="text" id="sav" required><br>
+            <button type="submit">Submit</button>
+            <p id="p3">This Form is part of the Patient’s Medical Records and is the Property of the Ministry of Health (MOH),<br> Government of the Republic of Trinidad and Tobago (GORTT).</p>
+        </form>
+    </div>
+    <a href="index.html"><button>Previous</button></a>
+
+</body>
+
+</html>
